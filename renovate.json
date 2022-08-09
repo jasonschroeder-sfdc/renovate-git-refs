@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "regexManagers": [
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "^FROM registry.company.com/images/(?<orgRepo>.*?):(?<currentDigest>\\w{7}?)"
+      ],
+      "depNameTemplate": "https://github.com/{{{orgRepo}}}",
+      "currentValueTemplate": "dev",
+      "versioningTemplate": "git",
+      "datasourceTemplate": "git-refs"
+    }
+  ]
+}
